@@ -1,0 +1,17 @@
+
+delay.elf:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00008000 <_start>:
+    8000:	e49d0004 	pop	{r0}		; (ldr r0, [sp], #4)
+    8004:	e59f1018 	ldr	r1, [pc, #24]	; 8024 <_start+0x24>
+    8008:	e1c120d0 	ldrd	r2, [r1]
+    800c:	e1a04002 	mov	r4, r2
+    8010:	e1c120d0 	ldrd	r2, [r1]
+    8014:	e0422004 	sub	r2, r2, r4
+    8018:	e1520000 	cmp	r2, r0
+    801c:	9afffffb 	bls	8010 <_start+0x10>
+    8020:	e12fff1e 	bx	lr
+    8024:	fe003004 	.word	0xfe003004
